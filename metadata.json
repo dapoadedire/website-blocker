@@ -1,0 +1,10 @@
+{
+  "name": "Website Blocker",
+  "description": "Toggle blocking of distracting websites via hosts file",
+  "uuid": "website-blocker@local",
+  "shell-version": [
+    "42"
+  ],
+  "version": 1,
+  "url": "https://github.com/dapoadedire/website-blocker"
+}

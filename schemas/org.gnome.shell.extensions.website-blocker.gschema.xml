@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.website-blocker" path="/org/gnome/shell/extensions/website-blocker/">
+    <key name="blocked-sites" type="as">
+      <default>['twitter.com', 'www.twitter.com', 'x.com', 'www.x.com', 'facebook.com', 'www.facebook.com', 'instagram.com', 'www.instagram.com', 'tiktok.com', 'www.tiktok.com']</default>
+      <summary>List of websites to block</summary>
+      <description>Array of domain names to redirect to localhost when blocking is enabled</description>
+    </key>
+  </schema>
+</schemalist>
