@@ -2,6 +2,14 @@
 
 A simple GNOME Shell extension that lets you block distracting websites with a single toggle button. It works by modifying your `/etc/hosts` file to redirect blocked domains to localhost.
 
+## Requirements
+
+- **Linux** with GNOME Shell desktop environment
+- **glib-compile-schemas** (usually included with GNOME)
+- **pkexec** (PolicyKit) for elevated permissions
+
+> **Note:** This extension only works on Linux systems running GNOME. It is not compatible with Windows, macOS, or other Linux desktop environments (KDE, XFCE, etc.).
+
 ## Features
 
 - **One-click toggle** in the GNOME top bar to block/unblock websites
@@ -12,22 +20,21 @@ A simple GNOME Shell extension that lets you block distracting websites with a s
 
 ## Installation
 
-### 1. Compile the schema
+### 1. Clone the repository
 
 ```bash
-cd /home/dapoadedire/Documents/Dev/projects/others/website-blocker
-glib-compile-schemas schemas/
+git clone https://github.com/dapoadedire/website-blocker.git
+cd website-blocker
 ```
 
-### 2. Install the extension
+### 2. Run the install script
 
 ```bash
-# Create the extensions directory if it doesn't exist
-mkdir -p ~/.local/share/gnome-shell/extensions/website-blocker@local
-
-# Copy all files to the extensions directory
-cp -r * ~/.local/share/gnome-shell/extensions/website-blocker@local/
+chmod +x install.sh
+./install.sh
 ```
+
+This will automatically compile the schema, create the extension directory, and copy all necessary files.
 
 ### 3. Restart GNOME Shell
 
@@ -140,8 +147,8 @@ sudo sed -i '/# WEBSITE_BLOCKER_START/,/# WEBSITE_BLOCKER_END/d' /etc/hosts
 After modifying the extension code:
 
 ```bash
-# Copy changes to the extension directory
-cp -r /home/dapoadedire/Documents/Dev/projects/others/website-blocker/* ~/.local/share/gnome-shell/extensions/website-blocker@local/
+# From the cloned repository directory, copy changes to the extension directory
+cp -r ./* ~/.local/share/gnome-shell/extensions/website-blocker@local/
 
 # Restart GNOME Shell (X11)
 # Press Alt+F2, type 'r', press Enter
